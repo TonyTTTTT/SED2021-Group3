@@ -10,7 +10,10 @@ public class City {
     private List<City> routes = new ArrayList<>();
 
     public boolean addRoute(City destination) {
-        return (routes.add(destination) && destination.addRoute(this));
+        if (!routes.contains(destination)) {
+            return (routes.add(destination) && destination.addRoute(this));
+        }
+        return false;
     }
 
     public boolean isConnected(City destination) {
