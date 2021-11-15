@@ -7,6 +7,7 @@ public abstract class Person {
     private String address;
     private int socialSecurityNumber;
     private Set<Company> companies;
+    private Set<Charge> charges;
 
     public Person(String name, String address, int socialSecurityNumber, Set<Company> companies) {
         this.name = name;

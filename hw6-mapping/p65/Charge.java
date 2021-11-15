@@ -5,7 +5,7 @@ import java.util.Timer;
 import p65.Person;
 
 public class Charge {
-    private Timer timer;
+    private int time;
     private int salary;
     private Person person;
     private Project project;
@@ -17,16 +17,8 @@ public class Charge {
         this.project = project;
     }
 
-    public int chargeTime(Project project, Timer time) {
+    public int chargeTime(Project project, int time) {
         return salary * time.chargeTime(project, project.getDepartment().getName());
-    }
-
-    public Timer getTimer() {
-        return timer;
-    }
-
-    public void setTimer(Timer timer) {
-        this.timer = timer;
     }
 
     public int getSalary() {
