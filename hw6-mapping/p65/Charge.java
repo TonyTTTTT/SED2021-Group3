@@ -10,8 +10,8 @@ public class Charge {
     private Person person;
     private Project project;
 
-    public Charge(Timer timer, int salary, Person person, Project project) {
-        this.timer = timer;
+    public Charge(int time, int salary, Person person, Project project) {
+        this.time = time;
         this.salary = salary;
         this.person = person;
         this.project = project;
