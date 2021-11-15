@@ -7,16 +7,22 @@ import java.util.List;
  * @author Shine Chang
  */
 public class City {
-    private List<City> routes = new ArrayList<>();
+    private List<Route> routes = new ArrayList<>();
 
-    public boolean addRoute(City destination) {
-        if (!routes.contains(destination)) {
-            return (routes.add(destination) && destination.addRoute(this));
+    public boolean addRoute(Route route) {
+        if (routes.contains(route) == false){
+            routes.add(route);
+            return true;
         }
         return false;
     }
 
     public boolean isConnected(City destination) {
-        return routes.contains(destination);
+        for (Route route : routes) {
+            if (route.contains(destination)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
