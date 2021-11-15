@@ -3,13 +3,13 @@ package p65;
 /**
  * author: fv1230
  */
-public class Charge {
+public class Salary {
     private int time;
     private int salary;
     private Person person;
     private Project project;
 
-    public Charge(int time, int salary, Person person, Project project) {
+    public Salary(int time, int salary, Person person, Project project) {
         this.time = time;
         this.salary = salary;
         this.person = person;
