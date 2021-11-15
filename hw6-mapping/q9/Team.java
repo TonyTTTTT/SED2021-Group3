@@ -9,4 +9,8 @@ public class Team {
     public Player getPlayersByYear(Integer year) {
         return players.get(year);
     }
+
+    public void addPlayer(Integer year ,Player player) {
+        players.put(year, player);
+    }
 }
