@@ -1,6 +1,8 @@
 package p65
 
 import java.util.jar.Attributes.Name;
+
+import jdk.tools.jlink.resources.plugins;
 import p65.Manager;
 
 /**
@@ -24,9 +26,17 @@ public class Department {
         this.products = products;
     }
 
-    // Redundant code
-    public String getName() {
-        return name;
+    public void createProduct(String name, int cost, int weight) {
+        Product product = new Product(name, cost, weight, this);
+        products.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        products.remove(product);
+    }
+
+    public Set<Product> getProducts() {
+        return products;
     }
 
     public void setManager(Manager manager) {
@@ -41,16 +51,14 @@ public class Department {
         return manager;
     }
 
-    public void createProduct(String name, int budget, int interalPriority, Set<Worker> workers, Manager manager) {
-        roduct product = new Product(name, budget, interalPriority, workers, manager);
-        products.add(product);
+    /**
+     * REDUNDANT CODE
+     */
+    public String getName() {
+        return name;
     }
 
-    public void removeProduct(Product product) {
-        products.remove(product);
-    }
-
-    public Set<Product> getProducts() {
-        return products;
+    public void setName(String name) {
+        this.name = name;
     }
 }

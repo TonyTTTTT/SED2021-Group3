@@ -44,7 +44,9 @@ public class Company {
         return departmentMap.get(name);
     }
 
-    // Redundant code
+    /**
+     * REDUNDANT CODE
+     */
     public void changePrimaryProduct(Product product) {
         primaryProduct = product;
     }

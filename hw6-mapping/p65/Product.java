@@ -1,6 +1,7 @@
 package p65
 
 import jdk.tools.jlink.resources.plugins;
+import p65.Department;
 import p65.Manager;
 
 /**
@@ -8,19 +9,29 @@ import p65.Manager;
  */
 public class Product {
     private String name;
-    private int budget;
-    private int interalPriority;
-    private Set<Worker> workers;
-    private Manager manager;
+    private int cost;
+    private int weight;
+    private Department department;
 
-    public Product(String name, int budget, int interalPriority, Set<Worker> workers, Manager manager) {
+    public Product(String name, int cost, int weight, Department department) {
         this.name = name;
-        this.budget = budget;
-        this.interalPriority = interalPriority;
-        this.workers = workers;
-        this.manager = manager;
+        this.cost = cost;
+        this.weight = weight;
+        this.department = department;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    
+    /**
+     * REDUNDANT CODE
+     */
     public String getName() {
         return name;
     }
@@ -29,35 +40,21 @@ public class Product {
         this.name = name;
     }
 
-    public int getBudget() {
-        return budget;
+    public int getCost() {
+        return cost;
     }
 
-    public void setBudget(int budget) {
-        this.budget = budget;
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
-    public int getInteralPriority() {
-        return interalPriority;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setInteralPriority(int interalPriority) {
-        this.interalPriority = interalPriority;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public Set<Worker> getWorkers() {
-        return workers;
-    }
 
-    public void setWorkers(Set<Worker> workers) {
-        this.workers = workers;
-    }
-
-    public Manager getManager() {
-        return manager;
-    }
-
-    public void setManager(Manager manager) {
-        this.manager = manager;
-    }
 }

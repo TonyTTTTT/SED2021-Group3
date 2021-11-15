@@ -43,10 +43,14 @@ public abstract class Person {
         this.salaries.add(salary);
     }
 
+    public void removeSalary(Salary salary) {
+        this.salaries.remove(salary);
+    }
 
-    /*
-    // Redundant code
-    */
+
+    /**
+     * REDUNDANT CODE
+     */
     // Name getter and setter
     public String getName() {
         return this.name;

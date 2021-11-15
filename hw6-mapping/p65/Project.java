@@ -18,8 +18,28 @@ public class Project {
         this.department = department;
     }
 
+    public void addWorker(Worker worker) {
+        this.workers.add(worker);
+    }
+
+    public void removeWorker(Worker worker) {
+        this.workers.remove(worker);
+    }
+
+    public void addManager(Manager manager) {
+        this.managers.add(manager);
+    }
+
+    public void removeManager(Manager manager) {
+        this.managers.remove(manager);
+    }
+    
     public void addEmployee(Person person) {
         employees.add(person);
+    }
+
+    public Set<Person> getEmployees() {
+        return employees;
     }
 
     public void createSalary(int time, int salary, Person person, Project project) {
@@ -33,9 +53,11 @@ public class Project {
         person.removeSalary(salary);
     }
 
-    /*
-    // Redundant code
-    */
+
+
+    /**
+     * REDUNDANT CODE
+     */
     // Name getter and setter
     public String getName() {
         return name;
@@ -45,19 +67,11 @@ public class Project {
         this.name = name;
     }
 
-    public int getCost() {
+    public int getBudjet() {
         return cost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setBudjet(int budjet) {
+        this.budjet = budjet;
     }
 }
