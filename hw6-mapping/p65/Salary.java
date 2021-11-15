@@ -1,8 +1,5 @@
 package p65;
 
-import java.util.Timer;
-import p65.Person;
-
 /**
  * author: fv1230
  */

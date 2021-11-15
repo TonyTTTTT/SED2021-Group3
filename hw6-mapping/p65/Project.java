@@ -5,24 +5,17 @@ package p65;
  */
 public class Project {
     private String name;
-    private int cost;
-    private int weight;
+    private int budjet;
+    private Set<Person> employees;
     private Department department;
     private Set<Charge> charges;
 
-    public Project(String name, int cost, int weight, Department department) {
+    public Project(String name, int cost, int weight, Set<Person> employees, Department department, Set<Charge> charges) {
         this.name = name;
         this.cost = cost;
         this.weight = weight;
+        this.employees = employees;
         this.department = department;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getCost() {
@@ -47,5 +40,13 @@ public class Project {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -1,7 +1,5 @@
 package p65;
 
-import java.util.Timer;
-
 /**
  * author: fv1230
  */
@@ -10,7 +8,7 @@ public abstract class Person {
     private String address;
     private int socialSecurityNumber;
     private Set<Company> employers;
-    private Set<Charge> charges;
+    private Set<Salary> salaries;
 
     public Person(String name, String address, int socialSecurityNumber, Set<Company> companies) {
         this.name = name;
@@ -31,6 +29,20 @@ public abstract class Person {
     public void addCompany(Company company) {
         this.companies.add(company);
     }
+
+    public void removeCompany(Company company) {
+        this.companies.remove(company);
+    }
+
+    // Salary getter and setter
+    public Set<Salary> getSalaries() {
+        return this.salaries;
+    }
+
+    public void addSalary(Salary salary) {
+        this.salaries.add(salary);
+    }
+
 
     /*
     // Redundant code
