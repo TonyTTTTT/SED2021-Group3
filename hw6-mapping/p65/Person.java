@@ -48,4 +48,8 @@ public abstract class Person {
     public void setCompanies(Set<Company> companies) {
         this.companies = companies;
     }
+
+    public void addCompany(Company company) {
+        this.companies.add(company);
+    }
 }

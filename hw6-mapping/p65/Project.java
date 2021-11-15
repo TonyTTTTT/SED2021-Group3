@@ -5,6 +5,7 @@ public class Project {
     private int cost;
     private int weight;
     private Department department;
+    private Hashtable<Person, Charge> charges;
 
     public Project(String name, int cost, int weight, Department department) {
         this.name = name;

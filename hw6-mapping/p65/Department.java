@@ -1,5 +1,7 @@
 package p65
 
+import java.util.jar.Attributes.Name;
+
 import p65.Manager;
 
 public class Department {
@@ -29,11 +31,16 @@ public class Department {
         this.manager = manager;
     }
 
+    public void setManager(){
+        this.manager = null;
+    }
+
     public Manager getManager() {
         return manager;
     }
 
-    public void addProduct(Product product) {
+    public void createProduct(String name, int budget, int interalPriority, Set<Worker> workers, Manager manager) {
+        roduct product = new Product(name, budget, interalPriority, workers, manager);
         products.add(product);
     }
 

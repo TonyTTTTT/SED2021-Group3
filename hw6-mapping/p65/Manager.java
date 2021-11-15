@@ -6,8 +6,7 @@ import p65.Person;
 public class Manager extends Person {
     
     private String department;
-    // private Set<Project> projects;
-    private Set<Charge> charges;
+    private Set<Project> projects;
     public Manager(
         String name,
         String address, 
@@ -17,7 +16,7 @@ public class Manager extends Person {
         Set<Project> projects) {
             super(name, address, socialSecurityNumber, companies);
             this.department = department;
-            // this.projects = projects;
+            this.projects = projects;
     }
 
     // Department operations
@@ -32,36 +31,17 @@ public class Manager extends Person {
     public void removeDepartment(Department department) {
         this.department = null;
     }
-
-    // Charge operations getter and setter
-    public Set<Charge> getCharges() {
-        return charges;
+    
+    // Project operations
+    public Set<Project> getProjects() {
+        return this.projects;
     }
 
-    public void setCharges(Set<Charge> charges) {
-        this.charges = charges;
+    public void addProject(Project project) {
+        this.projects.add(project);
     }
 
-    public int chargeTime(Project project, Timer time) {
-        int charge = 0;
-        for (Charge c : charges) {
-            if (c.getProject().equals(project)) {
-                charge += c.getCharge(time);
-            }
-        }
-        return charge;
+    public void removeProject(Project project) {
+        this.projects.remove(project);
     }
-
-    // // Project operations
-    // public Set<Project> getProjects() {
-    //     return this.projects;
-    // }
-
-    // public void addProject(Project project) {
-    //     this.projects.add(project);
-    // }
-
-    // public void removeProject(Project project) {
-    //     this.projects.remove(project);
-    // }
 }

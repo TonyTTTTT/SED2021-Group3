@@ -26,9 +26,10 @@ public class Company {
         employees.remove(person);
     }
 
-    public void addDepartment(Department department) {
+    public void createDepartment(String name, String address, int phoneNumber, Product primaryProduct) {
+        Department department = new Department(name, address, phoneNumber, primaryProduct);
         departments.add(department);
-        departmentMap.put(department.getName(), department);
+        departmentMap.put(name, department);
     }
 
     public void removeDepartment(Department department) {
