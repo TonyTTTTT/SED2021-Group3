@@ -41,7 +41,7 @@ public class Company {
     }
 
     // Redundant code
-    public void setPrimaryProduct(Product product) {
+    public void changePrimaryProduct(Product product) {
         primaryProduct = product;
     }
 
@@ -54,7 +54,26 @@ public class Company {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
+    public String getAddress() {
+        return this.address;
+    }
+
+    public int getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    public Product getPrimaryProduct() {
+        return this.primaryProduct;
+    }
+
+    public Set<Person> getEmployees() {
+        return this.employees;
+    }
+
+    public Set<Department> getDepartments() {
+        return this.departments;
+    }
 }
