@@ -10,6 +10,8 @@ public class Manager extends Person {
     
     private String department;
     private Set<Project> projects;
+
+    
     public Manager(
         String name,
         String address, 

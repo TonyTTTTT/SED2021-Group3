@@ -7,8 +7,10 @@ public abstract class Person {
     private String name;
     private String address;
     private int socialSecurityNumber;
+
     private Set<Company> employers;
     private Set<Salary> salaries;
+
 
     public Person(String name, String address, int socialSecurityNumber, Set<Company> companies) {
         this.name = name;
@@ -35,10 +37,6 @@ public abstract class Person {
     }
 
     // Salary getter and setter
-    public Set<Salary> getSalaries() {
-        return this.salaries;
-    }
-
     public void addSalary(Salary salary) {
         this.salaries.add(salary);
     }
@@ -47,7 +45,11 @@ public abstract class Person {
         this.salaries.remove(salary);
     }
 
+    public Set<Salary> getSalaries() {
+        return this.salaries;
+    }
 
+    
     /**
      * REDUNDANT CODE
      */
