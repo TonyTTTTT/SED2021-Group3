@@ -1,15 +1,11 @@
 package p65
 
-import java.util.jar.Attributes.Name;
-
-import jdk.tools.jlink.resources.plugins;
-import p65.Manager;
-
 /**
  * author: fv1230
  */
 public class Department {
     private String name;
+
     private Manager manager;
     private Set<Product> products;
 
@@ -44,6 +40,10 @@ public class Department {
     }
 
     public void setManager(){
+        this.manager = null;
+    }
+
+    public void removeManager(){
         this.manager = null;
     }
 

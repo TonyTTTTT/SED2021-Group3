@@ -8,6 +8,7 @@ public class Company {
     private String address;
     private int phoneNumber;
     private Product primaryProduct;
+
     private Set<Person> employees;
     private Set<Department> departments;
     private Hashtable<String, Department> departmentMap;
@@ -28,6 +29,10 @@ public class Company {
     public void fire(Person person) {
         employees.remove(person);
     }
+    
+    public Set<Person> getEmployees() {
+        return this.employees;
+    }
 
     public void createDepartment(String name, String address, int phoneNumber, Product primaryProduct) {
         Department department = new Department(name, address, phoneNumber, primaryProduct);
@@ -38,6 +43,10 @@ public class Company {
     public void removeDepartment(Department department) {
         departments.remove(department);
         departmentMap.remove(department.getName());
+    }
+
+    public Set<Department> getDepartments() {
+        return this.departments;
     }
 
     public Department getDepartment(String name) {
@@ -59,6 +68,10 @@ public class Company {
         this.phoneNumber = phoneNumber;
     }
 
+    public void changeName(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -73,13 +86,5 @@ public class Company {
 
     public Product getPrimaryProduct() {
         return this.primaryProduct;
-    }
-
-    public Set<Person> getEmployees() {
-        return this.employees;
-    }
-
-    public Set<Department> getDepartments() {
-        return this.departments;
     }
 }

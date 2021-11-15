@@ -6,16 +6,20 @@ package p65;
 public class Project {
     private String name;
     private int budjet;
-    private Set<Person> employees;
+    private int priority;
+
+    // private Set<Person> employees;
     private Set<Salary> salaries;
     private Set<Worker> workers;
-    private Set<Manager> managers;
+    private Manager manager;
 
-    public Project(String name, int budjet, Set<Person> employees, Department department, Set<Charge> charges) {
+    public Project(String name, int budjet, Department department, Set<Salary> salaries, Set<Worker> workers, Manager manager) {
         this.name = name;
         this.cost = budjet;
-        this.employees = employees;
         this.department = department;
+        this.salaries = salaries;
+        this.workers = workers;
+        this.manager = manager;
     }
 
     public void addWorker(Worker worker) {
@@ -26,20 +30,8 @@ public class Project {
         this.workers.remove(worker);
     }
 
-    public void addManager(Manager manager) {
-        this.managers.add(manager);
-    }
-
-    public void removeManager(Manager manager) {
-        this.managers.remove(manager);
-    }
-    
-    public void addEmployee(Person person) {
-        employees.add(person);
-    }
-
-    public Set<Person> getEmployees() {
-        return employees;
+    public void changeManager(Manager manager) {
+        this.managers = manager;
     }
 
     public void createSalary(int time, int salary, Person person, Project project) {
@@ -52,7 +44,6 @@ public class Project {
         salaries.remove(salary);
         person.removeSalary(salary);
     }
-
 
 
     /**
@@ -73,5 +64,13 @@ public class Project {
 
     public void setBudjet(int budjet) {
         this.budjet = budjet;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 }
