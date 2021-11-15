@@ -1,4 +1,4 @@
-import q5;
+package q5;
 
 public class GeometricalObject extends DrawingObject {
 
