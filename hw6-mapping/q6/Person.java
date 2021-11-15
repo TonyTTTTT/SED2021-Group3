@@ -1,4 +1,4 @@
-import q6;
+package q6;
 import java.util.Set;
 
 public class Person {
