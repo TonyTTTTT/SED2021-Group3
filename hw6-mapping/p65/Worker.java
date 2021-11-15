@@ -1,5 +1,8 @@
 package p65;
 
+/**
+ * author: fv1230
+ */
 public class Worker extends Person{
     
     // private Set<Project> projects;

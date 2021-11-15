@@ -3,6 +3,9 @@ package p65
 import jdk.tools.jlink.resources.plugins;
 import p65.Manager;
 
+/**
+ * author: fv1230
+ */
 public class Product {
     private String name;
     private int budget;
