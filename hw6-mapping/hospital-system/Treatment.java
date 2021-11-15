@@ -6,7 +6,7 @@ public class Treatment {
     private Time time;
     private String results;
 
-    Treatment(Date date, Time time, String results) {
+    Treatment(Physician physician, Patient patient, Date date, Time time, String results) {
         this.date = date;
         this.time = time;
         this.results = results;

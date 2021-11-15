@@ -11,10 +11,7 @@ public class Hospital {
         registeredPhysicians.add(inPhysician);
     }
 
-    public static void admit(Physician physician, Patient inPatient) {
-    }
-
-    public static void record(Date date, Time time, String result) {
-        records.add(new Treatment(date,time,result));
+    public static void record(Physician physician, Patient patient, Date date, Time time, String result) {
+        records.add(new Treatment(physician, patient, date,time,result));
     }
 }
