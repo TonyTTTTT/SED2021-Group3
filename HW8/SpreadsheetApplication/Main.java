@@ -43,7 +43,7 @@ public class Main {
     }
 
     public static void main(String[] args){
-        args = new String[] {"SpreadsheetApplication/sampleInput"}; // TO DELETE!!!
+        // args = new String[] {"SpreadsheetApplication/sampleInput"}; // TO DELETE!!!
         try{
             for (String filename : args){
                 File file = new File(filename);
