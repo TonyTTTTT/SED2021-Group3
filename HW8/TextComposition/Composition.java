@@ -12,8 +12,8 @@ public class Composition {
         components.add(component);
     }
 
-    public ArrayList<Component> getComponents(){
-        return components;
+    public Component getComponent(int componentId){
+        return components.get(componentId);
     }
 
     public void setCompositor(Compositor compositor){

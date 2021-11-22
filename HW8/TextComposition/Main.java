@@ -4,7 +4,8 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-public class Client {
+public class Main {
+    
     private static void parseCommand(Composition composition, String[] command){
         String type = command[0];
         // System.out.printf("-- %s\n", type);
@@ -39,7 +40,7 @@ public class Client {
         else if (type.equals("ChangeSize")){
             int componentId = Integer.parseInt(command[1]);
             int newSize = Integer.parseInt(command[2]);
-            composition.getComponents().get(componentId).changeSize(newSize);
+            composition.getComponent(componentId).changeSize(newSize);
         }
         else if (type.equals("Require")){
             String compositor = command[1];
@@ -57,7 +58,7 @@ public class Client {
     }
 
     public static void main(String[] args){
-        args = new String[] {"TextComposition/sampleInput"};
+        // args = new String[] {"TextComposition/sampleInput"}; // TO DELETE!!!
         try{
             for (String filename : args){
                 File file = new File(filename);
