@@ -1,15 +1,15 @@
 package TextComposition;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class Composition {
 
-    private ArrayList<Component> components = new ArrayList();
+    private LinkedHashMap<Integer, Component> components = new LinkedHashMap<>();
 
     private Compositor compositor;
 
     public void addComponent(Component component){
-        components.add(component);
+        components.put(component.getComponentId(), component);
     }
 
     public Component getComponent(int componentId){

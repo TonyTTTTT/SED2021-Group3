@@ -1,11 +1,14 @@
 package TextComposition;
 
-import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class ArrayCompositor implements Compositor{
-    public void compose(ArrayList<Component> components){
+    public void compose(LinkedHashMap<Integer, Component> components){
         int i = 1;
-        for (Component component : components){
+        Iterator<Component> componentIter = components.values().iterator();
+        while (componentIter.hasNext()){
+            Component component = componentIter.next();
             System.out.printf("[%d]%s", 
                 component.getNaturalSize(),
                 component.getContent()
@@ -13,8 +16,11 @@ public class ArrayCompositor implements Compositor{
             if ((i++) % 3 == 0){
                 System.out.println();
             }
-            else if (components.indexOf(component) != (components.size() -1)){
+            else if (componentIter.hasNext()){
                 System.out.print(" ");
+            }
+            else if (!componentIter.hasNext()){
+                System.out.println();
             }
         }
     }

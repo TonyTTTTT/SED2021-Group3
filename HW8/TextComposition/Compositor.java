@@ -1,7 +1,7 @@
 package TextComposition;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public interface Compositor {
-    public void compose(ArrayList<Component> components);
+    public void compose(LinkedHashMap<Integer, Component> components);
 }

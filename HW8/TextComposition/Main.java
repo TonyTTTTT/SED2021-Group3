@@ -8,7 +8,6 @@ public class Main {
     
     private static void parseCommand(Composition composition, String[] command){
         String type = command[0];
-        // System.out.printf("-- %s\n", type);
         if (type.equals("Text")){
             int componentId = Integer.parseInt(command[1]);
             int naturalSize = Integer.parseInt(command[2]);
