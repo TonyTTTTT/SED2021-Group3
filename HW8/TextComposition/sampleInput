@@ -1,0 +1,17 @@
+Text 0 12 5 72 Hi
+Text 10 12 5 72 yo
+Text 1 1 1 1 <ParagraphEnd>
+Text 2 12 5 72 nice
+Text 15 12 5 72 shi
+Text 3 12 5 72 to
+Text 20 12 5 72 ta
+Text 4 12 5 72 meet
+Text 5 12 5 72 you
+GraphicalElement 6 20 10 100 scared.jpg
+Text 7 1 1 1 <ParagraphEnd>
+Text 21 12 5 72 t
+Text 19 12 5 72 tt
+ChangeSize 0 10
+Require SimpleComposition
+Require TexComposition
+Require ArrayComposition
