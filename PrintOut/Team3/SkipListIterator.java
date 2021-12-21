@@ -1,4 +1,4 @@
-public class SkipListIterator {
+public class SkipListIterator implements Iterator {
     
     private SkipList list;
 

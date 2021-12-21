@@ -6,14 +6,12 @@ public class ListObject implements DataStructure {
 
     private List<StringObject> strings = new ArrayList<StringObject>();
 
-    private ListIterator iterator;
-
     public StringObject get(int index){
         return strings.get(index);
     }
 
-    public void createIterator(){
-        iterator = new ListIterator(this);
+    public ListIterator createIterator(){
+        return new ListIterator(this);
     }
 
     public void addContent(String content){
@@ -22,7 +20,7 @@ public class ListObject implements DataStructure {
     }
 
     public void printOutList(){
-        createIterator();
+        ListIterator iterator = createIterator();
         while (iterator.hasNext())
             System.out.println(iterator.next().content);
     }

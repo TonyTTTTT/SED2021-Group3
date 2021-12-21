@@ -2,7 +2,7 @@ public interface DataStructure {
 
 	public Content get(int index);
 
-    public void createIterator();
+    public Iterator createIterator();
 
     public void addContent(String content);
 

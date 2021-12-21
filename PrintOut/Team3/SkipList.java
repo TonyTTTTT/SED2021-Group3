@@ -6,15 +6,13 @@ public class SkipList implements DataStructure {
     private int length = 0;
 
     private List<SkipNode> skipNodes = new ArrayList<SkipNode>();
-    
-    private SkipListIterator iterator;
 
     public SkipNode get(int index) {
         return skipNodes.get(index);
     }
 
-    public void createIterator() {
-        iterator = new SkipListIterator(this);
+    public SkipListIterator createIterator() {
+        return new SkipListIterator(this);
     }
 
     public void addContent(String content) {
@@ -27,7 +25,7 @@ public class SkipList implements DataStructure {
     }
 
     public void printOutList() {
-        createIterator();
+        SkipListIterator iterator = createIterator();
         while (iterator.hasNext())
             System.out.println("SkipNode:" +  iterator.next().content);
     }
