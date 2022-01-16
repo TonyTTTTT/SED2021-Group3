@@ -5,7 +5,7 @@ import java.util.Collections;
 public class MedianRankingStrategy implements RankingStrategy {
 
     private float getMedian(ArrayList<Integer> scores){
-        return (scores.get(scores.size() / 2) + scores.get(scores.size() / 2 - 1)) / 2;
+        return (scores.get(scores.size() / 2) + scores.get((scores.size() - 1) / 2)) / 2;
     }
 
     public float calculateScore(Assignment assignment){
@@ -21,10 +21,13 @@ public class MedianRankingStrategy implements RankingStrategy {
     }
 
     private ArrayList<ArrayList<Integer>> getCriterionScores(Assignment assignment){
-        ArrayList<ArrayList<Integer>> scores = new ArrayList<>(assignment.reviewedRanks.size());
+        ArrayList<ArrayList<Integer>> scores = new ArrayList<>();
+        for (int i = 0; i < assignment.reviewedRanks.size(); ++i) {
+            scores.add(new ArrayList<Integer>());
+        }
         for (Map.Entry<Student, Rank> set : assignment.reviewedRanks.entrySet()){
             int i = 0;
-            for (String rank : set.getValue().levels){                          
+            for (String rank : set.getValue().levels){                        
                 int score = assignment.rubric.levels.get(rank);
                 scores.get(i++).add(score);
             }

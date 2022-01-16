@@ -38,7 +38,7 @@ public class Instructor {
         // System.out.println("haha");
         for (Student student : studentReview.keySet()) {
             if (student.studentID.equals(owner.studentID)) {
-                System.out.println("Error");
+                System.out.println("Cannot review one’s own assignment.");
                 return;
             }
         }

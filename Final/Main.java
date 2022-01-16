@@ -72,6 +72,7 @@ public class Main {
 
   // student [StudentID] [StudentID] …
   private static void handleStudentAdd(String[] words) {
+    DO(words);
     if (words.length < 2) {
       badInput();
       return;
@@ -95,11 +96,11 @@ public class Main {
 
   // schoolStrategy [Level],[Score] [Level]...
   private static void handleSchoolStrategy(String[] words) {
+    DO(words);
     if (words.length < 2) {
       badInput();
       return;
     }
-    DO(words);
 
     LinkedHashMap<String, Integer> Strategies = new LinkedHashMap<String, Integer>();
     for (int i = 1; i < words.length; i++) {
@@ -114,6 +115,7 @@ public class Main {
   // assignment [AssignmentID] [StudentID] [ReviewrID],[SampleScoreFile]
   // [ReviewrID],[Sa
   private static void handleAssignment(String[] words) {
+    DO(words);
     if (words.length < 4 || students.get(words[2]) == null) {
       badInput();
       return;
@@ -150,9 +152,9 @@ public class Main {
 
   // designCriterion [AssignmentID] [RubricFile]
   private static void handleDesignCriterion(String[] words) {
+    DO(words);
     if (words.length < 3)
       badInput();
-    DO(words);
     // Map<String, String> DesignCriterion = new HashMap<>();
     String AssignmentId, CriteriaFilename;
     AssignmentId = words[1];
@@ -204,22 +206,22 @@ public class Main {
 
   // printRubric [AssignmentID]
   private static void handlePrintRubric(String[] words) {
+    DO(words);
     if (words.length != 2) {
       badInput();
       return;
     }
-    DO(words);
     String assignmentID = words[1];
     instructor.printRubric(assignmentID);
   }
 
   // calculateScore [AssignmentID] [StudentID] [RankingStrategy]
   private static void handleCalculateScore(String[] words) {
+    DO(words);
     if (words.length != 4 || students.get(words[2]) == null) {
       badInput();
       return;
     }
-    DO(words);
     String assignmentID = words[1], studentID = words[2], strategyName = words[3];
     if (!setStrategy(strategyName)) {
       badInput();
@@ -231,21 +233,21 @@ public class Main {
 
   // averageCriterion [AssignmentID]
   private static void handleAverageCriterion(String[] words) {
+    DO(words);
     if (words.length != 2) {
       badInput();
       return;
     }
-    DO(words);
     instructor.averageCriterion(words[1]);
   }
 
   // findStrength [AssignmentID] [StudentID] [RankingStrategy]
   private static void handleFindStrength(String[] words) {
+    DO(words);
     if (words.length != 4 || students.get(words[2]) == null) {
       badInput();
       return;
     }
-    DO(words);
     String assignmentID = words[1], studentID = words[2], strategyName = words[3];
 
     if (!setStrategy(strategyName)) {
@@ -257,11 +259,11 @@ public class Main {
 
   // findWeakness [AssignmentID] [StudentID] [RankingStrategy]
   private static void handleFindWeakness(String[] words) {
+    DO(words);
     if (words.length != 4 || students.get(words[2]) == null) {
       badInput();
       return;
     }
-    DO(words);
     String assignmentID = words[1], studentID = words[2], strategyName = words[3];
     if (!setStrategy(strategyName)) {
       badInput();
@@ -295,7 +297,7 @@ public class Main {
   private static void DO(String[] words) {
     boolean isPrintLog = false;
     if (isPrintLog) {
-      System.out.print("DO: ");
+      System.out.print("[DO]: ");
       for (String word : words) {
         System.out.print(word + " ");
       }
