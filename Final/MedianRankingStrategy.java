@@ -22,7 +22,7 @@ public class MedianRankingStrategy implements RankingStrategy {
 
     private ArrayList<ArrayList<Integer>> getCriterionScores(Assignment assignment){
         ArrayList<ArrayList<Integer>> scores = new ArrayList<>();
-        for (int i = 0; i < assignment.reviewedRanks.size(); ++i) {
+        for (int i = 0; i < assignment.rubric.criterions.size(); ++i) {
             scores.add(new ArrayList<Integer>());
         }
         for (Map.Entry<Student, Rank> set : assignment.reviewedRanks.entrySet()){
