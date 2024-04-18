@@ -1,2 +1,2 @@
-- This repository contained the homework of Software Engineering Design, a course offered by CSIE, NTU, 2021.
+- These homework were done by Group3, which include 7 people.
 - Most PDF files contain class diagram, which are based on the requirements of one of the assignments.
